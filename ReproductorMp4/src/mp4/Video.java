@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package play_list;
+package mp4;
 
 /**
  *
@@ -14,17 +14,12 @@ public class Video {
     private String titulo;
     private String enlace;
     
-    public  Video(String titulo, String enlace){ 
+    public  Video(){ 
         
-        this.setTitulo(titulo);
-        this.setEnlace(enlace); 
+        this.enlace="";
+        this.titulo="";
     }
-
-    
-    
-    
-    
-    
+ 
     
     /**
      * @return the titulo

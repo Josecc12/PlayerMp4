@@ -11,14 +11,17 @@ public class FrameReproductor extends javax.swing.JFrame {
 
     //Creamos un objeto de la clase Reproductor
     Reproductor reproductor;
+    Lista playList;
+   
     //Creamos la variable de tipo String para almacenar la ruta del video
-    
+
     public FrameReproductor() {
         initComponents();
         //Colocamos el Frame en el centro
         this.setLocationRelativeTo(null);
         //Intanciamos el objeto de la clase Reproductor
         this.reproductor = new Reproductor();
+        this.playList=new Lista();
         list1.add("sss");
         list1.add("sdasdasdasdas");
     }
@@ -34,7 +37,7 @@ public class FrameReproductor extends javax.swing.JFrame {
         }
         return null;
     }
-    
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -228,15 +231,28 @@ public class FrameReproductor extends javax.swing.JFrame {
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
         try {
 
-            if (this.reproductor.getMediaPlayer() != null) 
+            if (this.reproductor.getMediaPlayer() != null) {
                 this.reproductor.parar();
-                       
+            }
+
             String ruta = obtenerVideo();
-            if (!ruta.isEmpty()) {                            
-                String nombre = ruta.split("/")[ruta.split("/").length-1];
+
+            if (!ruta.isEmpty()) {
+                String nombre = ruta.split("/")[ruta.split("/").length - 1];
+                //agregando a play list
+                Video video = new Video();
+                video.setEnlace(ruta);
+                video.setTitulo(nombre);
+                playList.Insertar_Nodo(video);
+                //agregando a Jlist
                 list1.add(nombre);
-                this.title.setText(nombre);
                 
+                //de aqui a bajo movelo a el botton play
+                list1.getSelectedItem();
+                this.title.setText(nombre);
+                 //String tmp=lista.buscar(list1.getSelectedItem().getEnlace);
+                
+                // Ruta tiene que ser tmp;
                 this.reproductor.setRuta(ruta);
                 this.reproductor.setJpanel(this.panel);
                 this.reproductor.mostrarVideo();
@@ -256,7 +272,7 @@ public class FrameReproductor extends javax.swing.JFrame {
     }//GEN-LAST:event_pauseActionPerformed
 
     private void volumeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_volumeStateChanged
-        this.reproductor.setVolumen((double)this.volume.getValue()/100);
+        this.reproductor.setVolumen((double) this.volume.getValue() / 100);
     }//GEN-LAST:event_volumeStateChanged
 
     private void list1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_list1ActionPerformed

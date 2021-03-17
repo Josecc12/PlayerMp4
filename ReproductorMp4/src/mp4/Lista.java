@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package play_list;
+package mp4;
 
 import javax.swing.JOptionPane;
 
@@ -26,6 +26,22 @@ public class Lista {
     
     public int get_tamanio(){ 
         return this.tamanio;
+    }
+
+    public Nodo getFrente() {
+        return frente;
+    }
+
+    public void setFrente(Nodo frente) {
+        this.frente = frente;
+    }
+
+    public Nodo getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(Nodo fondo) {
+        this.fondo = fondo;
     }
     
     public boolean esVacia(){ 
