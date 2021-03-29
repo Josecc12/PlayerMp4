@@ -50,7 +50,7 @@ public class Lista {
     
     public void Insertar_Nodo(Video video){ 
         
-       Nodo nuevo = new Nodo(null,null,video);
+       Nodo nuevo = new Nodo(video);
      
        
        if(esVacia()){ 
@@ -61,21 +61,45 @@ public class Lista {
        }
        else{ 
            fondo.setSiguiente(nuevo);
-           fondo = nuevo;
-           fondo.setAnterior(nuevo);
+           nuevo.setAnterior(fondo);
+           fondo = nuevo; 
        }
+       
        
        tamanio++; 
     }
     
-    public void Mostar(){ 
+   
+    public Nodo Buscar(String valor, Nodo actual){ 
+        if(actual != null){ 
+            if(valor == actual.getVideo().getEnlace()){ 
+                return actual;
+            }
+            else{ 
+                return Buscar(valor, actual.getSiguiente());
+            }       
+        }
         
-        Nodo aux = frente;
-        
-        while(aux != null){ 
-            JOptionPane.showMessageDialog(null,"Titulo: " +aux.getVideo().getTitulo() + 
-                    "\nEnlace: " + aux.getVideo().getEnlace());
-            aux = aux.getSiguiente();
+        return null; 
+    }
+    
+    public Nodo return_siguient(Nodo actual){ 
+        if(actual.getSiguiente() == null){ 
+            return frente;
+        }
+        else{ 
+            return actual.getSiguiente();
         }
     }
+    
+    public Nodo return_anterior(Nodo actual){ 
+        if(actual.getAnterior() == null){ 
+            return fondo;
+        }
+        else{ 
+            return actual.getAnterior(); 
+        }
+    }
+    
+    
 }

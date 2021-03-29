@@ -15,10 +15,10 @@ public class Nodo {
     private Nodo anterior;
     private Video video;
     
-    public Nodo(Nodo siguiente, Nodo anterior, Video video){ 
-        this.setSiguiente(siguiente);
-        this.setAnterior(anterior);
-        this.setVideo(video);
+    public  Nodo(Video video){ 
+        this.siguiente = null;
+        this.anterior = null;
+        this.video  = video;
         
     }
 
