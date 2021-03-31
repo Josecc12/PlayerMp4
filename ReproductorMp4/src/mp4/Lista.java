@@ -72,7 +72,7 @@ public class Lista {
    
     public Nodo Buscar(String valor, Nodo actual){ 
         if(actual != null){ 
-            if(valor == actual.getVideo().getEnlace()){ 
+            if(valor == actual.getVideo().getTitulo()){ 
                 return actual;
             }
             else{ 

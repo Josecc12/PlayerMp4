@@ -50,6 +50,7 @@ public class Reproductor {
      * @param jpanel the jpanel to set
      */
     public void setJpanel(JPanel jpanel) {
+        
         this.jpanel = jpanel;
     }
     
@@ -100,12 +101,12 @@ public class Reproductor {
         try {            
             int x = this.jpanel.getHeight();
             int y = this.jpanel.getWidth();
-            System.out.println(x);
-            System.out.println(y);
+          
 
             this.file = new File(this.ruta);            
 
-            this.media = new Media(this.file.toURI().toString());              
+            this.media = new Media(this.file.toURI().toString());   
+            
             this.mediaPlayer = new MediaPlayer(this.media);
             this.view = new MediaView(this.getMediaPlayer());
             this.view.setFitHeight(x);

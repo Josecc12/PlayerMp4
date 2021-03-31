@@ -19,6 +19,12 @@ public class Video {
         this.enlace="";
         this.titulo="";
     }
+    
+     public  Video(String enlace, String titulo){ 
+        
+        this.enlace=enlace;
+        this.titulo=titulo;
+    }
  
     
     /**

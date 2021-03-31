@@ -21,6 +21,13 @@ public class Nodo {
         this.video  = video;
         
     }
+    
+     public  Nodo(){ 
+        this.siguiente = null;
+        this.anterior = null;
+        this.video  = null;
+        
+    }
 
     /**
      * @return the siguiente
