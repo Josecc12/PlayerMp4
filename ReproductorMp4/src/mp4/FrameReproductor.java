@@ -384,8 +384,7 @@ public class FrameReproductor extends javax.swing.JFrame {
         // TODO add your handling code here:
         int random = (int) Math.floor(Math.random() * playList.get_tamanio() + 1);
         if (this.reproductor.getMediaPlayer() != null) {
-            System.out.println(playList.buscarRandom(1, playList.getFrente()).getVideo().getTitulo());
-            actual = playList.buscarRandom(random, playList.getFrente());
+            actual = playList.buscarRandom(random);
                 
             this.title.setText(actual.getVideo().getTitulo());
             Reproductor tmp=new Reproductor();
@@ -397,8 +396,7 @@ public class FrameReproductor extends javax.swing.JFrame {
             reproductor.mostrarVideo();
             reproductor.reproducir();
         }else{
-            System.out.println(playList.buscarRandom(1, playList.getFrente()).getVideo().getTitulo());
-            actual = playList.buscarRandom(random, playList.getFrente());
+            actual = playList.buscarRandom(random);
                 
             this.title.setText(actual.getVideo().getTitulo());
             Reproductor tmp=new Reproductor();
