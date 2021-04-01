@@ -101,5 +101,13 @@ public class Lista {
         }
     }
     
-    
+    public Nodo buscarRandom(int random) {
+        Nodo resultado = this.frente;
+        int contador = 1;
+        while (contador != random) {
+            resultado = resultado.getSiguiente();
+            contador++;
+        }
+        return resultado;
+    }
 }

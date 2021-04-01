@@ -382,10 +382,30 @@ public class FrameReproductor extends javax.swing.JFrame {
 
     private void randomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomActionPerformed
         // TODO add your handling code here:
+        int random = (int) Math.floor(Math.random() * playList.get_tamanio() + 1);
         if (this.reproductor.getMediaPlayer() != null) {
-            this.reproductor.pausar();
+            actual = playList.buscarRandom(random);
+                
+            this.title.setText(actual.getVideo().getTitulo());
+            Reproductor tmp=new Reproductor();
+            reproductor.parar();
+
+            tmp.setRuta(actual.getVideo().getEnlace());
+            tmp.setJpanel(panel);
+            reproductor=tmp;
+            reproductor.mostrarVideo();
+            reproductor.reproducir();
         }else{
-            
+            actual = playList.buscarRandom(random);
+                
+            this.title.setText(actual.getVideo().getTitulo());
+            Reproductor tmp=new Reproductor();
+
+            tmp.setRuta(actual.getVideo().getEnlace());
+            tmp.setJpanel(panel);
+            reproductor=tmp;
+            reproductor.mostrarVideo();
+            reproductor.reproducir();
         }
     }//GEN-LAST:event_randomActionPerformed
 
