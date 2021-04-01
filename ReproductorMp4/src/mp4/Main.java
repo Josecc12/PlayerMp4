@@ -6,6 +6,7 @@ package mp4;
  */
 public class Main {
     public static void main(String[] args) {
+        //s
         //1.  Se configura el aspecto de la aplicación
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
