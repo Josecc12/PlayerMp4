@@ -5,11 +5,13 @@
  */
 package mp4;
 
+import java.io.Serializable;
+
 /**
  *
  * @author RQ550LF
  */
-public class Nodo {
+public class Nodo  implements Serializable{
     
     private Nodo siguiente;
     private Nodo anterior;
