@@ -5,11 +5,13 @@
  */
 package mp4;
 
+import java.io.Serializable;
+
 /**
  *
  * @author RQ550LF
  */
-public class Video {
+public class Video  implements Serializable{
     
     private String titulo;
     private String enlace;

@@ -5,13 +5,14 @@
  */
 package mp4;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author RQ550LF
  */
-public class Lista {
+public class Lista  implements Serializable{
     
     private Nodo frente;
     private Nodo fondo;
